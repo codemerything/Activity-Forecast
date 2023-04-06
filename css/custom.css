@@ -1,0 +1,7 @@
+.bg-img{
+    background-image: url(/img/illustration.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 100%;
+}
