@@ -8,3 +8,5 @@
                     </div>
                   </div>
             </li>
+
+            open api key = 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
