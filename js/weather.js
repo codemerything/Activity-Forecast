@@ -18,7 +18,7 @@ export class Weather{
             if (event.key === 'Enter'){
                 event.preventDefault();
                 this.checkWeather(this.searchBox.value);
-                this.searchBox = '';
+                this.searchBox.value = '';
             }
         })
     }
@@ -33,8 +33,6 @@ export class Weather{
         this.wind.textContent = data.current.wind_mph + 'mph';
         this.weatherIcon.src = data.current.condition.icon;
         this.weathercondition.innerHTML = data.current.condition.text;
-
-        this.pickActivity();
     }
 
 
