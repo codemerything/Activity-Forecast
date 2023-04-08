@@ -1,3 +1,4 @@
+
 export class Weather{
     constructor(apiKey) {
         this.apiKey = apiKey,
@@ -9,6 +10,7 @@ export class Weather{
         this.wind = document.querySelector('.wind'),
         this.humiditiy = document.querySelector('.humidity'),
         this.weathercondition = document.querySelector('.weatcond'),
+        this.activity = document.querySelector('.activity'),
 
        this.setupListeners()
     }
@@ -29,15 +31,11 @@ export class Weather{
 
         this.city.innerHTML = data.location.name;
         this.celc.textContent = Math.floor(data.current.temp_c);
-        this.humiditiy.textContent = data.current.humidity + '%';
-        this.wind.textContent = data.current.wind_mph + 'mph';
+        this.humiditiy.textContent = `Humidity: ${data.current.humidity} %`;
+        this.wind.textContent = `Wind: ${data.current.wind_mph} mph`;
         this.weatherIcon.src = data.current.condition.icon;
         this.weathercondition.innerHTML = data.current.condition.text;
     }
 
 
-
 }
-
-const apiKey = '42f48ac9922e41b199293959230804'
-const weatherApp = new Weather(apiKey);
