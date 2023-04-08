@@ -15,7 +15,7 @@
     <nav class="container mx-auto p-6 relative">
       <ul class="flex justify-between">
         <li class="font-pacifico text-wtdtgreen lg:text-xl">...what to do today?</li>
-        <li class=""><input type="text" class="bg-wtdtgreen2 bg-opacity-30 placeholder:text-wtdtgreen2 rounded-full px-5" placeholder="Search"></li>
+        <li class=""><input type="text" class="bg-wtdtgreen2 bg-opacity-30 placeholder:text-wtdtgreen2 rounded-full px-5 search" placeholder="Search"></li>
         <li class="font-inter font-bold text-wtdtgreen">about project</li>
       </ul>
     </nav>
@@ -23,20 +23,19 @@
     <main class=" min-h-min flex flex-col mt-20">
       <div class="h-24 text-center bg-wtdtgreen bg-opacity-90  rounded-full px-24 items-center mx-auto">
         <h1 class="font-pacifico text-white mt-2 lg:text-xl">It looks like a perfect day to:</h1>
-        <h1 class="font-inter">handwrite letters and poems</h1>
+        <h1 class="font-inter activity">handwrite letters and poems</h1>
       </div>
 
       <div class="h-64 text-center bg-wtdtgreen bg-opacity-90 rounded-3xl px-32 items-center mx-auto mt-5">
         <h1 class="font-inter text-white mt-2 lg:text-3xl font-bold city">CALABAR</h1>
-        <img src="" alt="" id="weather-icon">
-        <h1 class="font-inter">PARTLY CLOUDY</h1>
-        <h1 class="font-inter">33.3 C</h1>
-        <div>
-          <div>Humidity</div>
-          <div>Wind</div>
+        <img src="" alt="" id="weather-icon" class="items-center">
+        <h1 class="font-inter weatcond">PARTLY CLOUDY</h1>
+
+        <div class="celc"> </div>
+        <div class="wind"> </div>
+        <div class="humidity"> </div>
         </div>
 
-      </div>
     </main>
 
     <footer class="text-center mt-12 border-t border-wtdtgreen bg-gray-300 bg-opacity-70 flex flex-col">
@@ -44,5 +43,6 @@
       <div> <a href="https://github.com/mmnldm">mmnldm</a></div>
     </footer>
 
+    <script src="/js/main.js" type="module"></script>
 </body>
 </html>
