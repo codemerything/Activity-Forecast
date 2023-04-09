@@ -11,6 +11,7 @@ export class Weather{
         this.humiditiy = document.querySelector('.humidity'),
         this.weathercondition = document.querySelector('.weatcond'),
         this.activity = document.querySelector('.activity'),
+        this.jsonUrl = './js/actions.json'
 
        this.setupListeners()
     }
@@ -35,7 +36,23 @@ export class Weather{
         this.wind.textContent = `Wind: ${data.current.wind_mph} mph`;
         this.weatherIcon.src = data.current.condition.icon;
         this.weathercondition.innerHTML = data.current.condition.text;
+        this.pickActivity();
     }
 
+    async pickActivity(){
+        const response = await fetch(this.jsonUrl);
+        const jsondata = await response.json();
+        const actions = jsondata.cold;
 
+        const temp = this.celc.textContent;
+
+        const ri = Math.floor(Math.random() * actions.length);
+        const ra = actions[ri];
+
+        if(temp > 13){
+            this.activity.innerHTML = ra;
+        }
+        console.log(jsondata);
+
+    }
 }
