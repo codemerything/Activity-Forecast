@@ -49,7 +49,7 @@ export class Weather{
         
         if(temp > 25){
             endpoint = this.recreational;
-        } else if(temp === 18 && 25){
+        } else if(temp === 18 || 25){
             endpoint = this.diy;
         } else if(temp <= 10){
             endpoint = this.diy;
