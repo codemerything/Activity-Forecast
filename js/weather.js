@@ -11,9 +11,9 @@ export class Weather{
         this.humiditiy = document.querySelector('.humidity'),
         this.weathercondition = document.querySelector('.weatcond'),
         this.activity = document.querySelector('.activity'),
-        this.recreational = 'http://www.boredapi.com/api/activity?type=recreational',
-        this.relaxation = 'http://www.boredapi.com/api/activity?type=relaxation',
-        this.diy = 'http://www.boredapi.com/api/activity?type=diy'
+        this.recreational = 'https://www.boredapi.com/api/activity?type=recreational',
+        this.relaxation = 'https://www.boredapi.com/api/activity?type=relaxation',
+        this.diy = 'https://www.boredapi.com/api/activity?type=diy'
 
 
        this.setupListeners()
@@ -47,10 +47,10 @@ export class Weather{
         const temp = parseInt(this.celc.innerHTML);
         let endpoint = '';
         
-        if(temp > 25){
+        if(temp > 30){
             endpoint = this.recreational;
         } else if(temp >= 18 || temp <= 25){
-            endpoint = this.diy;
+            endpoint = this.relaxation;
         } else if(temp <= 11){
             endpoint = this.relaxation;
         }
