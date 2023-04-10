@@ -51,8 +51,8 @@ export class Weather{
             endpoint = this.recreational;
         } else if(temp >= 18 || temp <= 25){
             endpoint = this.diy;
-        } else if(temp <= 10){
-            endpoint = this.diy;
+        } else if(temp <= 11){
+            endpoint = this.relaxation;
         }
 
         if(endpoint !== ''){
@@ -60,8 +60,6 @@ export class Weather{
             const jsondata = await response.json();
             const actions = jsondata.activity;
             this.activity.innerHTML = actions;
-
-            console.log(actions)
         }
 
 
