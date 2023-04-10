@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="/css/custom.css">
     <link rel="shortcut icon" href="./img/Vector.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,1,200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body class="bg-img">
 
     <nav class="container mx-auto p-6 relative">
       <ul class="flex justify-between">
-        <li class="font-pacifico text-wtdtgreen lg:text-xl">...what to do today?</li>
-        <li class=""><input type="text" class="bg-wtdtgreen2 bg-opacity-30 placeholder:text-wtdtgreen2 rounded-full px-5 search" placeholder="Search"></li>
-        <li class="font-inter font-bold text-wtdtgreen">about project</li>
+        <li class="font-pacifico text-wtdtgreen lg:text-xl text-xs mr-2">...what to do today?</li>
+        <li class=""><input type="text" class="bg-wtdtgreen2 bg-opacity-30 placeholder:text-wtdtgreen2 rounded-full px-8 search" placeholder="Search"></li>
+        <li class="font-inter font-bold text-wtdtgreen ml-3"><span class="material-symbols-outlined">dark_mode</span></li>
       </ul>
     </nav>
 
-    <main class=" min-h-min flex flex-col mt-20">
+    <main class=" lg:min-h-min h-full flex flex-col mt-20">
       <div class="h-24 text-center bg-wtdtgreen bg-opacity-90  rounded-full px-24 items-center mx-auto">
         <h1 class="font-pacifico text-white mt-2 lg:text-xl">It looks like a perfect day to:</h1>
         <h1 class="font-inter activity text-white text-lg mt-2"></h1>
@@ -31,7 +32,8 @@
         <img src="" alt="" id="weather-icon" class="justify-center">
         <h1 class="font-inter weatcond text-white text-lg mt-5 uppercase"></h1>
     
-        <div class="celc text-white font-bold text-xl"> Celsuis</div>
+        <div class="celc text-white font-bold text-xl">
+        </div>
         <div class="wind text-white font-inter"></div>
         <div class="humidity text-white font-inter mt-2"> </div>
     </div>
@@ -39,7 +41,7 @@
 
     </main>
 
-    <footer class="text-center mt-12 border-t border-wtdtgreen bg-gray-300 bg-opacity-70 flex flex-col">
+    <footer class="text-center mt-14 border-t border-wtdtgreen bg-gray-300 bg-opacity-70 flex flex-col">
       <div> ©2023</div>
       <div> <a href="https://github.com/mmnldm">mmnldm</a></div>
     </footer>
