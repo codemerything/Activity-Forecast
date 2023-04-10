@@ -11,7 +11,10 @@ export class Weather{
         this.humiditiy = document.querySelector('.humidity'),
         this.weathercondition = document.querySelector('.weatcond'),
         this.activity = document.querySelector('.activity'),
-        this.jsonUrl = './js/actions.json'
+        this.recreational = 'http://www.boredapi.com/api/activity?type=recreational',
+        this.relaxation = 'http://www.boredapi.com/api/activity?type=relaxation',
+        this.diy = 'http://www.boredapi.com/api/activity?type=diy'
+
 
        this.setupListeners()
     }
@@ -31,7 +34,7 @@ export class Weather{
         let data = await response.json();
 
         this.city.innerHTML = data.location.name;
-        this.celc.textContent = Math.floor(data.current.temp_c);
+        this.celc.innerHTML = Math.floor(data.current.temp_c) + '°C';
         this.humiditiy.textContent = `Humidity: ${data.current.humidity} %`;
         this.wind.textContent = `Wind: ${data.current.wind_mph} mph`;
         this.weatherIcon.src = data.current.condition.icon;
@@ -40,19 +43,27 @@ export class Weather{
     }
 
     async pickActivity(){
-        const response = await fetch(this.jsonUrl);
-        const jsondata = await response.json();
-        const actions = jsondata.cold;
 
-        const temp = this.celc.textContent;
-
-        const ri = Math.floor(Math.random() * actions.length);
-        const ra = actions[ri];
-
-        if(temp > 13 || temp > 12){
-            this.activity.innerHTML = ra;
+        const temp = parseInt(this.celc.innerHTML);
+        let endpoint = '';
+        
+        if(temp > 25){
+            endpoint = this.recreational;
+        } else if(temp === 18 && 25){
+            endpoint = this.diy;
+        } else if(temp <= 10){
+            endpoint = this.diy;
         }
-        console.log(jsondata);
+
+        if(endpoint !== ''){
+            const response = await fetch(endpoint);
+            const jsondata = await response.json();
+            const actions = jsondata.activity;
+            this.activity.innerHTML = actions;
+
+            console.log(actions)
+        }
+
 
     }
 }
