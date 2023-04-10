@@ -49,7 +49,7 @@ export class Weather{
         const ri = Math.floor(Math.random() * actions.length);
         const ra = actions[ri];
 
-        if(temp > 13){
+        if(temp > 13 || temp > 12){
             this.activity.innerHTML = ra;
         }
         console.log(jsondata);
