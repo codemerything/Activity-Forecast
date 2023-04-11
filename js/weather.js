@@ -16,7 +16,8 @@ export class Weather{
         this.diy = 'https://www.boredapi.com/api/activity?type=diy'
 
 
-       this.setupListeners()
+       this.setupListeners();
+       this.getUsersLocation();
     }
 
     setupListeners(){
@@ -64,4 +65,36 @@ export class Weather{
 
 
     }
+
+    async getUsersLocation() {
+        const successCallback = async (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+    
+            const apiURL = `https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${lat},${lon}`;
+            const response = await fetch(apiURL);
+            const data = await response.json();
+    
+            // Update the DOM with weather data
+            this.city.innerHTML = data.location.name;
+            this.celc.innerHTML = Math.floor(data.current.temp_c) + '°C';
+            this.humiditiy.textContent = `Humidity: ${data.current.humidity} %`;
+            this.wind.textContent = `Wind: ${data.current.wind_mph} mph`;
+            this.weatherIcon.src = data.current.condition.icon;
+            this.weathercondition.innerHTML = data.current.condition.text;
+            this.pickActivity();
+            console.log(data)
+        };
+        const errorCallback = (error) => {
+            console.error(`Geolocation error: ${error.message}`);
+            // ... handle error appropriately ...
+        };
+
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+          };
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback,options);
+    }
+    
 }
