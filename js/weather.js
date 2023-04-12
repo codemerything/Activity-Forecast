@@ -94,7 +94,7 @@ export class Weather{
             enableHighAccuracy: true,
             timeout: 10000,
           };
-        navigator.geolocation.getCurrentPosition(successCallback, errorCallback,options);
+         navigator.geolocation.getCurrentPosition(successCallback, errorCallback,options);
     }
     
 }
