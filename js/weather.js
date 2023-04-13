@@ -13,11 +13,13 @@ export class Weather{
         this.activity = document.querySelector('.activity'),
         this.recreational = 'https://www.boredapi.com/api/activity?type=recreational',
         this.relaxation = 'https://www.boredapi.com/api/activity?type=relaxation',
-        this.diy = 'https://www.boredapi.com/api/activity?type=diy'
+        this.diy = 'https://www.boredapi.com/api/activity?type=diy',
+        this.darkbtn = document.getElementById('darkbtn'),
 
 
        this.setupListeners();
        this.getUsersLocation();
+       this.darkMode();
     }
 
     setupListeners(){
@@ -95,6 +97,14 @@ export class Weather{
             timeout: 10000,
           };
          navigator.geolocation.getCurrentPosition(successCallback, errorCallback,options);
+    }
+
+    darkMode(){
+        this.darkbtn.addEventListener('click', (event) => {
+            this.darkbtn.classList.add('hidden');
+            
+
+        })
     }
     
 }
