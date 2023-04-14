@@ -14,7 +14,7 @@ export class Weather{
         this.recreational = 'https://www.boredapi.com/api/activity?type=recreational',
         this.relaxation = 'https://www.boredapi.com/api/activity?type=relaxation',
         this.diy = 'https://www.boredapi.com/api/activity?type=diy',
-        this.darkbtn = document.getElementById('darkbtn'),
+        this.btn = document.getElementById('btnswitch'),
 
 
        this.setupListeners();
@@ -100,10 +100,23 @@ export class Weather{
     }
 
     darkMode(){
-        this.darkbtn.addEventListener('click', (event) => {
-            this.darkbtn.classList.add('hidden');
-            
+        const isDarkMode = localStorage.getItem('isDarkMode');
+        const darkbtn = document.querySelector('.material-icons');
 
+        if(isDarkMode === true){
+            darkbtn.textContent = 'dark_mode';
+        } else {
+            darkbtn.textContent = 'light_mode';
+        }
+
+        this.btn.addEventListener('click', () => {
+            if(darkbtn.textContent === 'dark_mode') {
+                localStorage.getItem(isDarkMode, true);
+                darkbtn.textContent = 'light_mode';
+            } else {
+                localStorage.getItem(isDarkMode, false);
+                darkbtn.textContent = 'dark_mode';
+            }
         })
     }
     
