@@ -9,7 +9,8 @@ module.exports = {
       },
       colors:{
         wtdtgreen: '#72c032',
-        wtdtgreen2: '#608541'
+        wtdtgreen2: '#608541',
+        darkgreen: '#3d6f27'
       },
     },
   },
