@@ -14,7 +14,6 @@ export class Weather{
         this.recreational = 'https://www.boredapi.com/api/activity?type=recreational',
         this.relaxation = 'https://www.boredapi.com/api/activity?type=relaxation',
         this.diy = 'https://www.boredapi.com/api/activity?type=diy',
-        this.btn = document.getElementById('btnswitch'),
 
 
        this.setupListeners();
@@ -99,25 +98,35 @@ export class Weather{
          navigator.geolocation.getCurrentPosition(successCallback, errorCallback,options);
     }
 
-    darkMode(){
-        const isDarkMode = localStorage.getItem('isDarkMode');
-        const darkbtn = document.querySelector('.material-icons');
+ darkMode(){
+    const btn = document.querySelector('#theme-btn');
+    const dark = `<span class="material-icons">dark_mode</span>`
+    const light = `<span class="material-icons">light_mode</span>`
 
-        if(isDarkMode === true){
-            darkbtn.textContent = 'dark_mode';
-        } else {
-            darkbtn.textContent = 'light_mode';
-        }
+    let theme = localStorage.getItem("T_SITE_THEME") || "light";
+    theme === "light" ? setLightTheme() : setDarkTheme();
 
-        this.btn.addEventListener('click', () => {
-            if(darkbtn.textContent === 'dark_mode') {
-                localStorage.getItem(isDarkMode, true);
-                darkbtn.textContent = 'light_mode';
-            } else {
-                localStorage.getItem(isDarkMode, false);
-                darkbtn.textContent = 'dark_mode';
-            }
-        })
+    function setDarkTheme(){
+        document.body.classList.add('dark', 'bg-darkgreen');
+        btn.innerHTML = dark;
+        localStorage.setItem('T_SITE_THEME', 'dark');
+        theme = 'dark';
     }
-    
+
+    function setLightTheme(){
+        document.body.classList.remove('dark', 'bg-darkgreen');
+        btn.innerHTML = light;
+        localStorage.setItem('T_SITE_THEME', 'light');
+        theme = 'light';
+    }
+
+    btn.addEventListener('click', () => {
+        if(theme === 'light'){
+            setDarkTheme();
+        } else {
+            setLightTheme();
+        }
+    })
+
+ }
 }

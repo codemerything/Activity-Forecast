@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./*.html'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -10,7 +11,7 @@ module.exports = {
       colors:{
         wtdtgreen: '#72c032',
         wtdtgreen2: '#608541',
-        darkgreen: '#3d6f27'
+        darkgreen: '#386018'
       },
     },
   },
