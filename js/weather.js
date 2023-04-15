@@ -128,5 +128,12 @@ export class Weather{
         }
     })
 
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            let theme = localStorage.getItem("T_SITE_THEME") || "light";
+            theme === "light" ? setLightTheme() : setDarkTheme();
+        }, 100);
+    })
+
  }
 }
