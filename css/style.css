@@ -603,8 +603,16 @@ video {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .min-h-\[50vh\] {
   min-height: 50vh;
+}
+
+.min-h-full {
+  min-height: 100%;
 }
 
 .flex-col {
