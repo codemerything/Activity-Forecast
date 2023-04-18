@@ -11,7 +11,9 @@ module.exports = {
       colors:{
         wtdtgreen: '#72c032',
         wtdtgreen2: '#608541',
-        darkgreen: '#386018'
+        darkgreen: '#085339',
+        wtdtyellow: '#ffde00',
+        wtdtteal: '#2ca89e'
       },
     },
   },

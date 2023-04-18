@@ -107,14 +107,14 @@ export class Weather{
     theme === "light" ? setLightTheme() : setDarkTheme();
 
     function setDarkTheme(){
-        document.body.classList.add('dark', 'bg-darkgreen');
+        document.body.classList.add('dark');
         btn.innerHTML = dark;
         localStorage.setItem('T_SITE_THEME', 'dark');
         theme = 'dark';
     }
 
     function setLightTheme(){
-        document.body.classList.remove('dark', 'bg-darkgreen');
+        document.body.classList.remove('dark');
         btn.innerHTML = light;
         localStorage.setItem('T_SITE_THEME', 'light');
         theme = 'light';
@@ -126,13 +126,6 @@ export class Weather{
         } else {
             setLightTheme();
         }
-    })
-
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            let theme = localStorage.getItem("T_SITE_THEME") || "light";
-            theme === "light" ? setLightTheme() : setDarkTheme();
-        }, 100);
     })
 
  }

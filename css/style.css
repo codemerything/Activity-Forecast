@@ -567,20 +567,12 @@ video {
   margin-right: 0.5rem;
 }
 
-.mt-14 {
-  margin-top: 3.5rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
+.mt-32 {
+  margin-top: 8rem;
 }
 
 .mt-5 {
@@ -599,20 +591,8 @@ video {
   height: 16rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
-.h-screen {
-  height: 100vh;
-}
-
-.min-h-\[50vh\] {
-  min-height: 50vh;
-}
-
-.min-h-full {
-  min-height: 100%;
+.min-h-\[100vh\] {
+  min-height: 100vh;
 }
 
 .flex-col {
@@ -663,11 +643,6 @@ video {
   background-color: rgb(96 133 65 / var(--tw-bg-opacity));
 }
 
-.bg-darkgreen {
-  --tw-bg-opacity: 1;
-  background-color: rgb(56 96 24 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-30 {
   --tw-bg-opacity: 0.3;
 }
@@ -684,6 +659,11 @@ video {
   padding: 1.5rem;
 }
 
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .px-20 {
   padding-left: 5rem;
   padding-right: 5rem;
@@ -694,9 +674,14 @@ video {
   padding-right: 7rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .text-center {
@@ -754,18 +739,45 @@ video {
   color: rgb(96 133 65 / var(--tw-text-opacity));
 }
 
+:is(.dark .dark\:bg-darkgreen) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 83 57 / var(--tw-bg-opacity));
+}
+
 :is(.dark .dark\:bg-yellow-400) {
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:bg-wtdtteal) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(44 168 158 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:bg-wtdtyellow) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 222 0 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-opacity-70) {
   --tw-bg-opacity: 0.7;
 }
 
+:is(.dark .dark\:text-wtdtyellow) {
+  --tw-text-opacity: 1;
+  color: rgb(255 222 0 / var(--tw-text-opacity));
+}
+
 :is(.dark .dark\:text-yellow-400) {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -782,6 +794,11 @@ video {
   .lg\:px-32 {
     padding-left: 8rem;
     padding-right: 8rem;
+  }
+
+  .lg\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .lg\:text-3xl {

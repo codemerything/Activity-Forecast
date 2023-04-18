@@ -10,11 +10,13 @@
     <link rel="shortcut icon" href="./img/Vector.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="bg-img min-h-[50vh]"> 
+<body class=""> 
+  <div class="bg-img dark:bg-darkgreen">
+
     <nav class="container mx-auto p-6 relative">
       <ul class="flex justify-between">
-        <li class="font-pacifico text-wtdtgreen dark:text-yellow-400 lg:text-xl text-xs mr-2">...what to do today?</li>
-        <li class=""><input type="text" class="bg-wtdtgreen2 bg-opacity-30 dark:bg-yellow-400 dark:bg-opacity-70 placeholder:text-wtdtgreen2 rounded-full px-8 search" placeholder="Search"></li>
+        <li class="font-inter text-wtdtgreen dark:text-wtdtyellow lg:text-xl text-xs mr-2">...What To Do Today?</li>
+        <li class=""><input type="text" class="bg-wtdtgreen2 bg-opacity-30 dark:bg-yellow-400 dark:bg-opacity-70 placeholder:text-wtdtgreen2 rounded-full lg:px-10 search" placeholder="Search"></li>
         <li class="font-inter font-bold text-wtdtgreen ml-3 dark:text-yellow-400"> 
           <button id="theme-btn" type="button">
             <span class="material-icons">
@@ -27,8 +29,8 @@
       </ul>
     </nav>
 
-    <main class=" lg:min-h-min h-full flex flex-col">
-      <div class="h-24 text-center bg-wtdtgreen bg-opacity-90  rounded-full lg:px-24 px-20 items-center mx-auto">
+    <main class=" lg:min-h-min min-h-[100vh] flex flex-col">
+      <div class="h-24 text-center bg-wtdtgreen dark:bg-wtdtyellow bg-opacity-90  rounded-full lg:px-24 px-20 items-center mx-auto">
         <h1 class="font-pacifico text-white mt-2 lg:text-xl">It looks like a perfect day to:</h1>
         <h1 class="font-inter activity text-white lg:text-lg text-sm mt-2 "></h1>
       </div>
@@ -44,15 +46,26 @@
         <div class="humidity text-white font-inter mt-2"> </div>
     </div>
     
+    <!-- <div class="h-64 flex flex-col justify-center items-center bg-wtdtgreen bg-opacity-90 rounded-3xl lg:px-32 px-28 mx-auto mt-5">
+      <h1 class="font-inter text-white mt-2 lg:text-3xl font-bold city"></h1>
+      <img src="" alt="" id="weather-icon" class="justify-center">
+      <h1 class="font-inter weatcond text-white lg:text-lg text-sm font-bold mt-5 uppercase"></h1>
+  
+      <div class="celc text-white font-bold text-xl">
+      </div>
+      <div class="wind text-white font-inter"></div>
+      <div class="humidity text-white font-inter mt-2"> </div>
+  </div> -->
 
     </main>
 
-    <footer class="text-center mt-14 border-t border-wtdtgreen bg-gray-300 bg-opacity-70 flex flex-col">
-      <div class="mt-4">
+    <footer class="text-center mt-32 border-t border-wtdtgreen bg-gray-300 bg-opacity-70 flex flex-col">
+      <div class="mt-">
         <div> ©2023</div>
         <div> <a href="https://github.com/mmnldm">mmnldm</a></div>
       </div>
     </footer>
+  </div>
 </div>
     <script src="/js/main.js" type="module"></script>
     <script defer src="/_vercel/insights/script.js"></script>
