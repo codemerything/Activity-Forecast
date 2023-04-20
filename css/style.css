@@ -563,6 +563,10 @@ video {
   margin-left: 0.75rem;
 }
 
+.mr-12 {
+  margin-right: 3rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -583,6 +587,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-24 {
   height: 6rem;
 }
@@ -593,6 +601,22 @@ video {
 
 .min-h-\[100vh\] {
   min-height: 100vh;
+}
+
+.min-h-\[5\] {
+  min-height: 5;
+}
+
+.min-h-\[50vh\] {
+  min-height: 50vh;
+}
+
+.min-h-\[vh\] {
+  min-height: vh;
+}
+
+.min-h-\[70vh\] {
+  min-height: 70vh;
 }
 
 .flex-col {
@@ -659,11 +683,6 @@ video {
   padding: 1.5rem;
 }
 
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
 .px-20 {
   padding-left: 5rem;
   padding-right: 5rem;
@@ -672,16 +691,6 @@ video {
 .px-28 {
   padding-left: 7rem;
   padding-right: 7rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .text-center {
@@ -744,19 +753,14 @@ video {
   background-color: rgb(8 83 57 / var(--tw-bg-opacity));
 }
 
-:is(.dark .dark\:bg-yellow-400) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
-}
-
-:is(.dark .dark\:bg-wtdtteal) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(44 168 158 / var(--tw-bg-opacity));
-}
-
 :is(.dark .dark\:bg-wtdtyellow) {
   --tw-bg-opacity: 1;
   background-color: rgb(255 222 0 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:bg-yellow-400) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-opacity-70) {
@@ -773,17 +777,39 @@ video {
   color: rgb(250 204 21 / var(--tw-text-opacity));
 }
 
-@media (min-width: 768px) {
-  .md\:px-5 {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-}
-
 @media (min-width: 1024px) {
+  .lg\:visible {
+    visibility: visible;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:min-h-\[min\] {
+    min-height: min;
+  }
+
+  .lg\:min-h-\[5o\] {
+    min-height: 5o;
+  }
+
+  .lg\:min-h-\[50\] {
+    min-height: 50;
+  }
+
+  .lg\:min-h-\[50vh\] {
+    min-height: 50vh;
+  }
+
   .lg\:min-h-min {
     min-height: -moz-min-content;
     min-height: min-content;
+  }
+
+  .lg\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .lg\:px-24 {
@@ -794,11 +820,6 @@ video {
   .lg\:px-32 {
     padding-left: 8rem;
     padding-right: 8rem;
-  }
-
-  .lg\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
   }
 
   .lg\:text-3xl {

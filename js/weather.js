@@ -102,12 +102,16 @@ export class Weather{
     const btn = document.querySelector('#theme-btn');
     const dark = `<span class="material-icons">dark_mode</span>`
     const light = `<span class="material-icons">light_mode</span>`
+    const limg =  `<img src="./img/Vector.png" alt="" style="height: 30px;" >`
+    const dimg =  `<img src="./img/Vector-dm-01.png" alt="" style="height: 30px;" >`
+    const logo = document.querySelector('.logo');
 
     let theme = localStorage.getItem("T_SITE_THEME") || "light";
     theme === "light" ? setLightTheme() : setDarkTheme();
 
     function setDarkTheme(){
         document.body.classList.add('dark');
+        logo.innerHTML = `${limg} Activity Forecast`;
         btn.innerHTML = dark;
         localStorage.setItem('T_SITE_THEME', 'dark');
         theme = 'dark';
@@ -115,6 +119,7 @@ export class Weather{
 
     function setLightTheme(){
         document.body.classList.remove('dark');
+        logo.innerHTML = `${dimg} Activity Forecast`;
         btn.innerHTML = light;
         localStorage.setItem('T_SITE_THEME', 'light');
         theme = 'light';
