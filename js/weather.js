@@ -14,11 +14,14 @@ export class Weather{
         this.recreational = 'https://www.boredapi.com/api/activity?type=recreational',
         this.relaxation = 'https://www.boredapi.com/api/activity?type=relaxation',
         this.diy = 'https://www.boredapi.com/api/activity?type=diy',
+        this.time = document.querySelector('.time');
+        this.weekday = document.querySelector('.weekday');
 
 
        this.setupListeners();
-       this.getUsersLocation();
+    //   this.getUsersLocation();
        this.darkMode();
+       
     }
 
     setupListeners(){
@@ -35,13 +38,28 @@ export class Weather{
         const response = await fetch(`${this.apiUrl}${city}`);
         let data = await response.json();
 
+        const timestamp = data.location.localtime_epoch;
+        const timezone = data.location.tz_id;
+        const datte = this.getFullTime(timestamp,timezone);
+        const dayy = this.getDayOfWeek(timestamp);
+        console.log(dayy);
+        console.log(timezone)
+        
+
         this.city.innerHTML = data.location.name;
         this.celc.innerHTML = Math.floor(data.current.temp_c) + '°C';
         this.humiditiy.textContent = `Humidity: ${data.current.humidity} %`;
         this.wind.textContent = `Wind: ${data.current.wind_mph} mph`;
         this.weatherIcon.src = data.current.condition.icon;
         this.weathercondition.innerHTML = data.current.condition.text;
+        this.time.textContent = datte;
+        this.weekday.textContent = dayy;
+
         this.pickActivity();
+        console.log(data)
+
+
+
     }
 
     async pickActivity(){
@@ -75,6 +93,11 @@ export class Weather{
             const apiURL = `https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${lat},${lon}`;
             const response = await fetch(apiURL);
             const data = await response.json();
+
+            const timestamp = data.location.localtime_epoch;
+            const timezone = data.location.tz_id;
+            const datte = this.getFullTime(timestamp,timezone);
+            const dayy = this.getDayOfWeek(timestamp,timezone);
     
             // Update the DOM with weather data
             this.city.innerHTML = data.location.name;
@@ -83,6 +106,9 @@ export class Weather{
             this.wind.textContent = `Wind: ${data.current.wind_mph} mph`;
             this.weatherIcon.src = data.current.condition.icon;
             this.weathercondition.innerHTML = data.current.condition.text;
+
+            this.time.textContent = datte;
+            this.weekday.textContent = dayy;
             this.pickActivity();
             console.log(data)
         };
@@ -96,6 +122,7 @@ export class Weather{
             timeout: 10000,
           };
          navigator.geolocation.getCurrentPosition(successCallback, errorCallback,options);
+    
     }
 
  darkMode(){
@@ -111,7 +138,6 @@ export class Weather{
 
     function setDarkTheme(){
         document.body.classList.add('dark');
-        logo.innerHTML = `${limg} Activity Forecast`;
         btn.innerHTML = dark;
         localStorage.setItem('T_SITE_THEME', 'dark');
         theme = 'dark';
@@ -119,7 +145,6 @@ export class Weather{
 
     function setLightTheme(){
         document.body.classList.remove('dark');
-        logo.innerHTML = `${dimg} Activity Forecast`;
         btn.innerHTML = light;
         localStorage.setItem('T_SITE_THEME', 'light');
         theme = 'light';
@@ -134,4 +159,19 @@ export class Weather{
     })
 
  }
+
+ getFullTime(timestamp, timezone) {
+  const date = new Date(timestamp * 1000).toLocaleTimeString('en-US',{timeZone: timezone});
+  return date;
+}
+
+ getDayOfWeek(dateString) {
+    const date = new Date(dateString * 1000);
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayOfWeek = date.getDay();
+    const dayName = days[dayOfWeek]
+    return dayName;
+  }
+  
+
 }
