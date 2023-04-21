@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity Forecast</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="/css/custom.css">
-    <link rel="shortcut icon" href="./img/Vector.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Forecast</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="shortcut icon" href="./img/Vector.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class=""> 
+
+<body class="">
   <div class="bg-img dark:bg-darkgreen">
 
     <nav class="container mx-auto p-6 relative">
 
       <div class="flex items-center justify-between">
         <div class="lg:flex">
-          <img src="./img/Vector-dm-01.png" alt="" class="h-[30px]" >
-          <h1 class="lg:visible hidden">Activity Forecast</h1>
+          <img src="./img/Vector-dm-01.png" alt="" class="h-[30px]">
+          <h1 class="hidden sm:block font-inter">Activity Forecast</h1>
         </div>
 
         <div>
-          <input type="text" class="bg-wtdtgreen2 bg-opacity-30 dark:bg-yellow-400 dark:bg-opacity-70 placeholder:text-wtdtgreen2 rounded-full lg:px-5 px-2 placeholder:ml-4 search" placeholder="Search" size="25">
+          <input type="text"
+            class="bg-wtdtgreen2 bg-opacity-30 dark:bg-yellow-400 dark:bg-opacity-70 placeholder:text-wtdtgreen2 rounded-full lg:px-5 px-2 placeholder:ml-4 search"
+            placeholder="Search" size="25">
         </div>
- 
+
         <div class="font-inter font-bold text-wtdtgreen ml-3 dark:text-yellow-400">
           <button id="theme-btn" type="button">
             <span class="material-icons">
@@ -35,7 +39,7 @@
       </div>
       </ul>
 
-      
+
     </nav>
 
 
@@ -46,10 +50,10 @@
           <h2 class="time"> 12:23</h2>
           <h2 class="weekday"> Saturday</h2>
         </div>
-          <div class="bg-wtdtgreen lg:px-20 lg:h-32 rounded-md text-center">
-            <h1 class="text-white lg:text-xl pt-5 dark:text-darkgreen">It looks like a perfect day to:</h1>
-            <h1 class="font-inter activity text-white lg:text-lg text-sm mt-2 dark:text-darkgreen"></h1>
-          </div>
+        <div class="bg-wtdtgreen lg:px-20 lg:h-32 rounded-md text-center">
+          <h1 class="text-white lg:text-xl pt-5 dark:text-darkgreen">It looks like a perfect day to:</h1>
+          <h1 class="font-inter activity text-white lg:text-lg text-sm mt-2 dark:text-darkgreen"></h1>
+        </div>
 
       </div>
 
@@ -58,7 +62,7 @@
         <h1 class="font-inter text-white mt-2 lg:text-3xl font-bold city"></h1>
         <img src="" alt="" id="weather-icon" class="justify-center">
         <h1 class="font-inter weatcond text-white lg:text-lg text-sm font-bold mt-5 uppercase"></h1>
-    
+
         <div class="celc text-white font-bold text-xl">
         </div>
         <div class="wind text-white font-inter"></div>
@@ -66,8 +70,9 @@
       </div>
     </main>
 
+    
     <div class="md:hidden container flex items-center px-6 mx-auto mt-10 space-y-0">
-            <p>Brrroooooo</p>
+      <p>WORK IN PROGRESSS</p>
     </div>
 
     <footer class="text-center mt-32 border-t border-wtdtgreen bg-gray-300 bg-opacity-70 flex flex-col">
@@ -77,8 +82,9 @@
       </div>
     </footer>
   </div>
-</div>
-    <script src="/js/main.js" type="module"></script>
-    <script defer src="/_vercel/insights/script.js"></script>
+  </div>
+  <script src="/js/main.js" type="module"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
+
 </html>
