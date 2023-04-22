@@ -48,11 +48,21 @@
     <main class="min-h-screen lg:min-h-[70vh] lg:flex  justify-center lg:space-x-9 lg:mt-32 container mx-auto hidden">
       <div class="space-y-10 flex-col">
         <div class="flex flex-col text-center bg-wtdtgreen lg:px-20 lg:h-32 container rounded-lg px-10">
-          <h2 class="time"> 12:23</h2>
-          <h2 class="weekday"> Saturday</h2>
+          <div class="flex items-center justify-center">
+            <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mt-10 loader">
+          </div>
+          <div class="mt-[30px]">
+            <h2 class="time"></h2>
+            <h2 class="weekday"> </h2>
+          </div>
+
         </div>
+
+
+
         <div class="bg-wtdtgreen lg:px-20 lg:h-32 rounded-md text-center">
           <h1 class="text-white lg:text-xl pt-5 dark:text-darkgreen">It looks like a perfect day to:</h1>
+          <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] ml-5 loader-activity">
           <h1 class="font-inter activity text-white lg:text-lg text-sm mt-2 dark:text-darkgreen"></h1>
         </div>
 
@@ -60,6 +70,7 @@
 
 
       <div class="lg:px-20 h-72 bg-wtdtgreen text-center items-center rounded-md">
+        <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mt-24 loader-weather">
         <h1 class="font-inter text-white mt-2 lg:text-3xl font-bold city"></h1>
         <img src="" alt="" id="weather-icon" class="justify-center">
         <h1 class="font-inter weatcond text-white lg:text-lg text-sm font-bold mt-5 uppercase"></h1>
