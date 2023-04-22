@@ -12,24 +12,24 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body class="">
-  <div class="bg-img dark:bg-darkgreen">
+<body class="transition duration-300 ease-in-out">
+  <div class="bg-img dark:bg-afdarkgreen">
 
     <nav class="container mx-auto p-6 relative">
 
       <div class="flex items-center justify-between">
         <div class="lg:flex">
           <img src="./img/Vector-dm-01.png" alt="" class="h-[30px]">
-          <h1 class="hidden sm:block font-inter">Activity Forecast</h1>
+          <h1 class="hidden sm:block font-inter dark:text-white">Activity Forecast</h1>
         </div>
 
         <div>
           <input type="text"
-            class="bg-wtdtgreen2 bg-opacity-30 dark:bg-yellow-400 dark:bg-opacity-70 placeholder:text-wtdtgreen2 rounded-full lg:px-5 px-2 placeholder:ml-4 search"
-            placeholder="Search" size="25">
+            class="bg-afgreen2 bg-opacity-30 dark:bg-yellow-400 dark:bg-opacity-70 placeholder:text-aftgreen2 rounded-full lg:px-5 px-3 placeholder:ml-4 search"
+            placeholder="Search" size="">
         </div>
 
-        <div class="font-inter font-bold text-wtdtgreen ml-3 dark:text-yellow-400">
+        <div class="font-inter font-bold text-afgreen ml-3 dark:text-yellow-400">
         
           <button id="theme-btn" type="button">
             <span class="material-icons">
@@ -45,49 +45,48 @@
 
 
 
-    <main class="min-h-screen lg:min-h-[70vh] lg:flex  justify-center lg:space-x-9 lg:mt-32 container mx-auto hidden">
-      <div class="space-y-10 flex-col">
-        <div class="flex flex-col text-center bg-wtdtgreen lg:px-20 lg:h-32 container rounded-lg px-10">
+    <main class="min-h-screen lg:min-h-[70vh] lg:flex  justify-center lg:space-x-9 lg:mt-32 container mx-auto">
+      <div class="space-y-8 flex-col">
+        <div class="flex flex-col text-center bg-afgreen lg:w-[20rem] lg:h-32 container rounded-lg px-10">
           <div class="flex items-center justify-center">
             <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mt-10 loader">
           </div>
           <div class="mt-[30px]">
-            <h2 class="time"></h2>
-            <h2 class="weekday"> </h2>
+            <h2 class="time text-white font-inter font-bold text-xl"></h2>
+            <h2 class="weekday text-white font-inter font-bold text-xl"> </h2>
           </div>
 
         </div>
 
 
 
-        <div class="bg-wtdtgreen lg:px-20 lg:h-32 rounded-md text-center">
+        <div class="bg-afgreen lg:w-[20rem] lg:h-32 rounded-md text-center">
           <h1 class="text-white lg:text-xl pt-5 dark:text-darkgreen">It looks like a perfect day to:</h1>
-          <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] ml-5 loader-activity">
+          <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mx-auto loader-activity">
           <h1 class="font-inter activity text-white lg:text-lg text-sm mt-2 dark:text-darkgreen"></h1>
         </div>
 
       </div>
 
 
-      <div class="lg:px-20 h-72 bg-wtdtgreen text-center items-center rounded-md">
+      <div class="lg:px-20 h-72 bg-afgreen text-center items-center rounded-md">
         <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mt-24 loader-weather">
-        <h1 class="font-inter text-white mt-2 lg:text-3xl font-bold city"></h1>
-        <img src="" alt="" id="weather-icon" class="justify-center">
-        <h1 class="font-inter weatcond text-white lg:text-lg text-sm font-bold mt-5 uppercase"></h1>
-
-        <div class="celc text-white font-bold text-xl">
+        <div class="clear">
+          <h1 class="font-inter text-white mt-2 lg:text-3xl font-bold city"></h1>
+          <img src="" alt="" id="weather-icon" class="justify-center mx-auto">
+          <h1 class="font-inter weatcond text-white lg:text-lg text-sm font-bold mt-5 uppercase"></h1>
+  
+          <div class="celc text-white font-bold text-xl">
+          </div>
+          <div class="wind text-white font-inter"></div>
+          <div class="humidity text-white font-inter mt-2"> </div>
         </div>
-        <div class="wind text-white font-inter"></div>
-        <div class="humidity text-white font-inter mt-2"> </div>
+
       </div>
     </main>
 
-    
-    <div class="md:hidden container flex items-center px-6 mx-auto mt-10 space-y-0">
-      <p>WORK IN PROGRESSS</p>
-    </div>
 
-    <footer class="text-center mt-32 border-t border-wtdtgreen bg-gray-300 bg-opacity-70 flex flex-col">
+    <footer class="text-center mt-32 border-t border-afgreen bg-gray-300 bg-opacity-70 flex flex-col">
       <div class="mt-">
         <div> ©2023</div>
         <div> <a href="https://github.com/mmnldm">mmnldm</a></div>

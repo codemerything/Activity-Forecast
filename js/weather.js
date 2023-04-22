@@ -46,8 +46,8 @@ export class Weather{
         const datte = this.getFullTime(timestamp,timezone);
         const dayy = this.getDayOfWeek(timestamp,timezone);
         this.loader.style.display = 'none';
+        this.loader2.style.display = 'none';
         
-
         this.city.innerHTML = data.location.name;
         this.celc.innerHTML = Math.floor(data.current.temp_c) + '°C';
         this.humiditiy.textContent = `Humidity: ${data.current.humidity} %`;
@@ -103,6 +103,7 @@ export class Weather{
             const datte = this.getFullTime(timestamp,timezone);
             const dayy = this.getDayOfWeek(timestamp,timezone);
             this.loader.style.display = 'none';
+            this.loader1.style.display = 'none'
             this.loader2.style.display = 'none'
             
     
@@ -136,22 +137,20 @@ export class Weather{
     const btn = document.querySelector('#theme-btn');
     const dark = `<span class="material-icons">dark_mode</span>`
     const light = `<span class="material-icons">light_mode</span>`
-    const limg =  `<img src="./img/Vector.png" alt="" style="height: 30px;" >`
-    const dimg =  `<img src="./img/Vector-dm-01.png" alt="" style="height: 30px;" >`
-    const logo = document.querySelector('.logo');
+
 
     let theme = localStorage.getItem("T_SITE_THEME") || "light";
     theme === "light" ? setLightTheme() : setDarkTheme();
 
     function setDarkTheme(){
-        document.body.classList.add('dark');
+        document.body.classList.add('dark', 'transition-colors',);
         btn.innerHTML = dark;
         localStorage.setItem('T_SITE_THEME', 'dark');
         theme = 'dark';
     }
 
     function setLightTheme(){
-        document.body.classList.remove('dark');
+        document.body.classList.remove('dark', 'transition',);
         btn.innerHTML = light;
         localStorage.setItem('T_SITE_THEME', 'light');
         theme = 'light';

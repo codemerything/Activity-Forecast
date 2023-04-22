@@ -9,11 +9,12 @@ module.exports = {
         'inter': ['Inter', 'sans-serif']
       },
       colors:{
-        wtdtgreen: '#72c032',
-        wtdtgreen2: '#608541',
-        darkgreen: '#085339',
-        wtdtyellow: '#ffde00',
-        wtdtteal: '#2ca89e'
+        afgreen: '#72c032',
+        afgreen2: '#608541',
+        afdarkgreen: '#085339',
+        afyellow: '#ffde00',
+        wtdtteal: '#2ca89e',
+        aftext: '#222222',
       },
     },
   },
