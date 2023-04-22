@@ -16,10 +16,13 @@ export class Weather{
         this.diy = 'https://www.boredapi.com/api/activity?type=diy',
         this.time = document.querySelector('.time');
         this.weekday = document.querySelector('.weekday');
+        this.loader = document.querySelector('.loader');
+        this.loader1 = document.querySelector('.loader-activity');
+        this.loader2 = document.querySelector('.loader-weather');
 
 
        this.setupListeners();
-    //   this.getUsersLocation();
+       this.getUsersLocation();
        this.darkMode();
        
     }
@@ -41,9 +44,8 @@ export class Weather{
         const timestamp = data.location.localtime_epoch;
         const timezone = data.location.tz_id;
         const datte = this.getFullTime(timestamp,timezone);
-        const dayy = this.getDayOfWeek(timestamp);
-        console.log(dayy);
-        console.log(timezone)
+        const dayy = this.getDayOfWeek(timestamp,timezone);
+        this.loader.style.display = 'none';
         
 
         this.city.innerHTML = data.location.name;
@@ -80,7 +82,9 @@ export class Weather{
             const jsondata = await response.json();
             const actions = jsondata.activity;
             this.activity.innerHTML = actions;
+            this.loader1.style.display = 'none';
         }
+        
 
 
     }
@@ -98,6 +102,9 @@ export class Weather{
             const timezone = data.location.tz_id;
             const datte = this.getFullTime(timestamp,timezone);
             const dayy = this.getDayOfWeek(timestamp,timezone);
+            this.loader.style.display = 'none';
+            this.loader2.style.display = 'none'
+            
     
             // Update the DOM with weather data
             this.city.innerHTML = data.location.name;
@@ -165,12 +172,11 @@ export class Weather{
   return date;
 }
 
- getDayOfWeek(dateString) {
+ getDayOfWeek(dateString, timezone) {
     const date = new Date(dateString * 1000);
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const dayOfWeek = date.getDay();
-    const dayName = days[dayOfWeek]
-    return dayName;
+    const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: timezone}
+    const daysOfWeek = new Intl.DateTimeFormat('en-US', options).format(date);
+    return daysOfWeek;
   }
   
 
