@@ -110,8 +110,8 @@ export class Weather{
             // Update the DOM with weather data
             this.city.innerHTML = data.location.name;
             this.celc.innerHTML = Math.floor(data.current.temp_c) + '°C';
-            this.humiditiy.textContent = `Humidity: ${data.current.humidity} %`;
-            this.wind.textContent = `Wind: ${data.current.wind_mph} mph`;
+            this.humiditiy.textContent = `HUMIDITY: ${data.current.humidity} %`;
+            this.wind.textContent = `WIND: ${data.current.wind_mph} mph`;
             this.weatherIcon.src = data.current.condition.icon;
             this.weathercondition.innerHTML = data.current.condition.text;
 

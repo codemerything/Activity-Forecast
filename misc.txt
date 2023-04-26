@@ -1,0 +1,46 @@
+
+
+   <main class="min-h-screen lg:min-h-[70vh] lg:flex lg:space-x-9 lg:mt-32 lg:mx-auto">
+      <div class="space-y-8 flex-col">
+        
+        <div class="flex flex-col text-center bg-afgreen lg:w-[20rem] lg:h-32 w-[10rem] items-center rounded-lg">
+          <div class="flex items-center justify-center">
+            <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mt-10 loader">
+          </div>
+          <div class="mt-[30px] items-center">
+            <h2 class="time text-white font-inter font-bold text-xl"></h2>
+            <h2 class="weekday text-white font-inter font-bold text-xl"> </h2>
+          </div>
+
+        </div>
+
+
+
+        <div class="bg-afgreen lg:w-[20rem] lg:h-32 rounded-md text-center w-[10rem] flex justify-center">
+          <h1 class="text-white lg:text-xl pt-5 dark:text-darkgreen">It looks like a perfect day to:</h1>
+          <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mx-auto loader-activity">
+          <h1 class="font-inter activity text-white lg:text-lg text-sm mt-2 dark:text-darkgreen px-3"></h1>
+        </div>
+
+      </div>
+
+
+      <div class="lg:px-20 h-72 bg-afgreen text-center items-center rounded-md">
+        <img src="./img/spinner.gif" alt="Loading...." class="h-[80px] mt-24 loader-weather">
+        <div class="clear">
+          <h1 class="font-inter text-white mt-4 lg:text-3xl font-bold city"></h1>
+          <img src="" alt="" id="weather-icon" class="justify-center mx-auto h-[80px]">
+          <h1 class="font-inter weatcond text-white lg:text-lg text-sm font-bold mt-2 uppercase"></h1>
+  
+          <div class="celc text-white font-bold text-xl">
+          </div>
+
+
+          <div class="flex space-x-2 mt-2">
+            <div class="wind text-white font-inter font-bold"></div>
+            <div class="humidity text-white font-inter font-bold"> </div>
+          </div>
+        </div>
+
+      </div>
+    </main>

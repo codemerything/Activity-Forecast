@@ -21,16 +21,17 @@
       <div class="flex items-center justify-between">
         <div class="lg:flex">
           <img src="./img/Vector-dm-01.png" alt="" class="h-[30px]">
-          <h1 class="hidden sm:block font-inter dark:text-white">Activity Forecast</h1>
+          <h1 class="hidden sm:block font-inter dark:text-white lg:text-2xl lg:ml-5">Activity Forecast</h1>
         </div>
 
         <div>
           <input type="text"
-            class="bg-afgreen2 bg-opacity-30 dark:bg-yellow-400 dark:bg-opacity-70 placeholder:text-aftgreen2 rounded-full lg:px-5 px-3 placeholder:ml-4 search"
-            placeholder="Search" size="">
+            class="bg-afgreen2 bg-opacity-30 dark:bg-yellow-400 dark:bg-opacity-70 placeholder:text-aftgreen2 rounded-full lg:px-5 px-3 lg:mr-9 placeholder:ml-4 search"
+            data-tippy-content="Search for city"
+            placeholder="Search">
         </div>
 
-        <div class="font-inter font-bold text-afgreen ml-3 dark:text-yellow-400">
+        <div class="font-inter font-bold lg:text-lg text-afgreen ml-3 dark:text-yellow-400">
         
           <button id="theme-btn" type="button">
             <span class="material-icons">
@@ -46,50 +47,45 @@
 
 
 
-    <main class="min-h-screen lg:min-h-[70vh] lg:flex  justify-center lg:space-x-9 lg:mt-32 container mx-auto">
-      <div class="space-y-8 flex-col">
-        <div class="flex flex-col text-center bg-afgreen lg:w-[20rem] lg:h-32 container rounded-lg px-10">
-          <div class="flex items-center justify-center">
-            <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mt-10 loader">
+    <main class="min-h-screen lg:min-h-[70vh] lg:flex lg:space-x-9 lg:mt-32 lg:mx-auto justify-center">
+      <div class="flex lg:flex-col items-center lg:items-center lg:space-y-8">
+        
+        <div class="flex flex-col items-center bg-afgreen rounded-lg lg:w-[20rem] lg:h-32 w-[10rem] ml-4">
+          <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mt-10 loader">
+          <div class="mt-[30px] text-center">
+            <h2 class="time font-bold text-xl text-white font-inter"></h2>
+            <h2 class="weekday font-bold text-xl text-white font-inter"> </h2>
           </div>
-          <div class="mt-[30px]">
-            <h2 class="time text-white font-inter font-bold text-xl"></h2>
-            <h2 class="weekday text-white font-inter font-bold text-xl"> </h2>
+        </div>
+    
+        <div class="flex flex-col items-center bg-afgreen rounded-md lg:w-[20rem] lg:h-32 w-[10rem] ml-4">
+          <h1 class="text-white lg:text-xl pt-5 dark:text-darkgreen text-center text-sm">It looks like a perfect day to:</h1>
+          <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mt-2 loader-activity">
+          <h1 class="activity text-white lg:text-lg text-sm mt-2 dark:text-darkgreen px-3 font-inter"></h1>
+        </div>
+    
+      </div>
+    
+      <div class="flex flex-col items-center justify-center lg:px-20 h-72 bg-afgreen rounded-md w-[15rem] mx-auto lg:my-0 mt-3">
+        <img src="./img/spinner.gif" alt="Loading...." class="h-[80px] mt-24 loader-weather">
+        <div class="clear text-center">
+          <h1 class="city font-bold text-3xl text-white font-inter mt-4"></h1>
+          <img src="" alt="" id="weather-icon" class="mx-auto h-[80px] justify-center">
+          <h1 class="weatcond font-bold text-lg text-sm text-white uppercase font-inter mt-2"></h1>
+          <div class="celc font-bold text-xl text-white"></div>
+          <div class="flex space-x-2 mt-2">
+            <div class="wind font-bold text-white font-inter"></div>
+            <div class="humidity font-bold text-white font-inter"></div>
           </div>
-
         </div>
-
-
-
-        <div class="bg-afgreen lg:w-[20rem] lg:h-32 rounded-md text-center">
-          <h1 class="text-white lg:text-xl pt-5 dark:text-darkgreen">It looks like a perfect day to:</h1>
-          <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mx-auto loader-activity">
-          <h1 class="font-inter activity text-white lg:text-lg text-sm mt-2 dark:text-darkgreen"></h1>
-        </div>
-
       </div>
 
-
-      <div class="lg:px-20 h-72 bg-afgreen text-center items-center rounded-md">
-        <img src="./img/spinner.gif" alt="Loading...." class="h-[50px] mt-24 loader-weather">
-        <div class="clear">
-          <h1 class="font-inter text-white mt-2 lg:text-3xl font-bold city"></h1>
-          <img src="" alt="" id="weather-icon" class="justify-center mx-auto">
-          <h1 class="font-inter weatcond text-white lg:text-lg text-sm font-bold mt-5 uppercase"></h1>
-  
-          <div class="celc text-white font-bold text-xl">
-          </div>
-          <div class="wind text-white font-inter"></div>
-          <div class="humidity text-white font-inter mt-2"> </div>
-        </div>
-
-      </div>
     </main>
 
 
     <footer class="text-center mt-32 border-t border-afgreen bg-gray-300 bg-opacity-70 flex flex-col">
       <div class="mt-">
-        <div class="font-thin"> ©2023</div>
+        <div class="font-inter "> ©2023</div>
         <div><a href="https://github.com/mmnldm"><i class="fa-brands fa-github fa-xl"></i></a> </div>
       </div>
     </footer>
@@ -97,6 +93,8 @@
   </div>
   <script src="/js/main.js" type="module"></script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@4"></script>
 </body>
 
 </html>
