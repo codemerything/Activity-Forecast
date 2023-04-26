@@ -121,7 +121,7 @@ export class Weather{
             console.log(data)
         };
         const errorCallback = (error) => {
-            console.error(`Geolocation error: ${error.message}`);
+            alert(`Geolocation error: ${error.message}`);
             // ... handle error appropriately ...
         };
 
