@@ -58,10 +58,6 @@ export class Weather{
         this.weekday.textContent = dayy;
 
         this.pickActivity();
-        console.log(data)
-
-
-
     }
 
     async pickActivity(){
