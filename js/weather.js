@@ -116,6 +116,7 @@ export class Weather{
             this.pickActivity();
             console.log(data)
         };
+        
         const errorCallback = (error) => {
             alert(`Geolocation error: ${error.message}`);
             // ... handle error appropriately ...
@@ -139,14 +140,14 @@ export class Weather{
     theme === "light" ? setLightTheme() : setDarkTheme();
 
     function setDarkTheme(){
-        document.body.classList.add('dark', 'transition-colors',);
+        document.body.classList.add('dark',);
         btn.innerHTML = dark;
         localStorage.setItem('T_SITE_THEME', 'dark');
         theme = 'dark';
     }
 
     function setLightTheme(){
-        document.body.classList.remove('dark', 'transition',);
+        document.body.classList.remove('dark',);
         btn.innerHTML = light;
         localStorage.setItem('T_SITE_THEME', 'light');
         theme = 'light';
